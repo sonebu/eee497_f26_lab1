@@ -1,0 +1,20 @@
+EEE 497 - Lab 01
+Recover audio from an IQ capture
+
+You are given the complex baseband IQ dump file: capture.iq. Your task is to recover the audio inside that dump.
+
+The following information are provided:
+- type:         unsigned 8-bit
+- byte layout:  interleaved I, Q, I, Q, ...
+- fs:           512000 Hz
+- conversion:   (x - 127) / 128
+
+Your task:
+1. Load the IQ.
+2. Find the signal that carries the audio in the spectrum. Report its estimated IF (Hz) and occupied bandwidth.
+3. Design and apply a bandpass filter to isolate the signal (FIR, IIR, etc., your design).
+4. Identify the signal modulation inside that band. 
+5. Up/downconvert it to (complex) baseband, demodulate with a chain you implement, low-pass, decimate to an audio rate etc.
+6. Write a WAV containing the audio.
+
+Deliverables are code that reads the IQ and processes it, the output WAV, and a lab report that explains your work in detail.
